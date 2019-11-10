@@ -140,10 +140,10 @@ void encoder_update_user(uint8_t index, bool clockwise) {
         tap_code16(!clockwise ? KC_VOLD : KC_VOLU);
         break;
       case _RAISE:
-        tap_code16(clockwise ? KC_BRIU : KC_BRID);
+        tap_code16(!clockwise ? KC_BRID : KC_BRIU);
         break;
       case _LOWER:
-        tap_code16(clockwise ? RGB_HUD : RGB_HUI);
+        tap_code16(!clockwise ? RGB_HUD : RGB_HUI);
         break;
     }
 }
