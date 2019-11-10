@@ -17,7 +17,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_GRV,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_MINS,     KC_EQL,             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, \
   KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LBRC,     KC_RBRC,            KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    RGB_TOG,     RGB_MOD,            KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,  \
-           KC_LGUI, KC_LALT, KC_LCTL, LOWER,       KC_BSPC,                  KC_SPC,              KC_LEFT, KC_RGHT, KC_DOWN, KC_UP
+           KC_LGUI, KC_LALT, KC_LCTL, LOWER,       KC_BSPC,                  KC_SPC,              KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT
   ),
 
   [_LOWER] = LAYOUT_ortho_hhkb(
@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______, _______, _______, _______, _______,     _______,             _______,   KC_UP, _______, _______, _______, KC_F12,  \
   KC_MPLY, _______, _______, _______, _______, _______, _______,     _______,             KC_LEFT, _______, KC_RGHT, _______, _______, _______, \
   KC_MUTE, _______, _______, _______, _______, _______, _______,     _______,             _______, KC_DOWN, _______, _______, _______, _______, \
-           KC_VOLD, KC_VOLU, _______, _______,      KC_DELT,                 KC_ENT,               KC_HOME,  KC_END, KC_PGDN, KC_PGUP
+           KC_VOLD, KC_VOLU, _______, _______,      KC_DELT,                 KC_ENT,               KC_HOME, KC_PGDN, KC_PGUP, KC_END
   )
 };
 
