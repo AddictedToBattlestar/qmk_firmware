@@ -14,6 +14,7 @@ Make example for this keyboard (after setting up your build environment):
 Example of flashing this keyboard:
 
     make keebio/iris/rev4:default:flash
+    make keebio/iris/rev4:addictedtobattlestar:flash
 
 See [build environment setup](https://docs.qmk.fm/#/newbs_getting_started) then the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information.
 
