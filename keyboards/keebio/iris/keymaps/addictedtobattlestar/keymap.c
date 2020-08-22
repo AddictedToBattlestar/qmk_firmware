@@ -119,7 +119,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void encoder_update_user(uint8_t index, bool clockwise) {
     switch (biton32(layer_state)) {
         default:
-            tap_code(clockwise ? KC_VOLU : KC_VOLD);
+            tap_code(clockwise ? KC_VOLD : KC_VOLU);
             break;
         case _LOWER:
             tap_code(clockwise ? KC_BRMD : KC_BRMU);
