@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
            KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,          KC_BSPC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RAISE,
         //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                            LALT_T(KC_DEL), LCTL_T(KC_BSPC), KC_LGUI,                   KC_ENT,  KC_SPC,  LOWER
+                                  KC_LALT, LCTL_T(KC_BSPC), KC_LGUI,                   KC_ENT,  KC_SPC,  LOWER
         //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
         ),
 
@@ -120,13 +120,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void encoder_update_user(uint8_t index, bool clockwise) {
     switch (biton32(layer_state)) {
         default:
-            tap_code(clockwise ? KC_VOLD : KC_VOLU);
+            tap_code(clockwise ? KC_VOLU : KC_VOLD);
             break;
         case _LOWER:
-            tap_code(clockwise ? KC_BRMD : KC_BRMU);
+            tap_code(clockwise ? KC_BRMU : KC_BRMD);
             break;
         case _RAISE:
-            tap_code(clockwise ? KC_PGDN : KC_PGUP);
+            tap_code(clockwise ? KC_PGUP : KC_PGDN);
             break;
     }
 }
