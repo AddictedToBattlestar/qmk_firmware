@@ -62,15 +62,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ADJUST] = LAYOUT(
         //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-           _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, _______, _______, RESET,
+           RGB_M_X, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, _______, _______, RESET,
         //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, _______, KC_LPRN, KC_RPRN,
+           RGB_M_B, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, _______, KC_LPRN, KC_RPRN,
         //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, RGB_VAD, RGB_SAD, RGB_HUD, KC_UNDS, KC_MINS,                            KC_LEFT, KC_UP,   KC_RGHT, _______, KC_LCBR, KC_RCBR,
+           RGB_M_K, RGB_VAD, RGB_SAD, RGB_HUD, KC_UNDS, KC_MINS,                            KC_LEFT, KC_UP,   KC_RGHT, _______, KC_LCBR, KC_RCBR,
         //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, RGB_VAI, RGB_SAI, RGB_HUI, KC_EQL,  KC_PLUS, _______,          _______, KC_LEFT, KC_DOWN, KC_RGHT, RGB_M_B, KC_LBRC, KC_RBRC,
+           RGB_M_P, RGB_VAI, RGB_SAI, RGB_HUI, KC_EQL,  KC_PLUS, _______,          _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, KC_LBRC, KC_RBRC,
         //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                          _______, _______,  _______,                   _______, _______, _______
+                                          _______, _______,  _______,                   RESET,  _______, _______
         //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
         )};
 
