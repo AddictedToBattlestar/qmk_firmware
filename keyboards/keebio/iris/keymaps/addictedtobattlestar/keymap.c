@@ -3,20 +3,17 @@
 extern keymap_config_t keymap_config;
 
 #define _QWERTY 0
-#define _LOWER 1
-#define _RAISE 2
+#define _NUMPAD 1
+#define _FUNPAD 2
 #define _ADJUST 3
 
 #define A_RENAME LSFT(KC_F6)
 #define A_EXTRACT LALT(LGUI(KC_M))
 #define A_RUN LALT(LGUI(KC_R))
 
-enum custom_keycodes {
-    QWERTY = SAFE_RANGE,
-    LOWER,
-    RAISE,
-    ADJUST,
-};
+#define NUMPAD TT(_NUMPAD)
+#define FUNPAD MO(_FUNPAD)
+#define ADJUST MO(_ADJUST)
 
 // prettier-ignore
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -29,103 +26,64 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
            KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
         //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-           KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,          KC_BSPC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+           KC_LSFT, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,          KC_BSPC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, MT(MOD_RSFT,KC_ENT),
         //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                          KC_LCTL, LOWER, LGUI_T(KC_BSPC),              KC_SPC,  RAISE,   KC_LALT
+                                          KC_LCTL, ADJUST,  LGUI_T(KC_BSPC),           KC_SPC,  NUMPAD,  KC_LALT
         //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
         ),
 
-    [_RAISE] = LAYOUT(
+    [_NUMPAD] = LAYOUT(
         //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-           KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
+           KC_N,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
         //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-           KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
+           _______, KC_PERC, KC_7,    KC_8,    KC_9,    KC_DLR,                             _______, _______, _______, _______, _______, _______,
         //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, KC_LCBR, KC_RCBR, KC_UNDS, KC_PLUS, _______,                            KC_LEFT, KC_UP,   KC_RGHT, _______, _______, _______,
+           _______, KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS,                            KC_LEFT, KC_UP,   KC_RGHT, _______, _______, _______,
         //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, KC_LBRC, KC_RBRC, KC_MINS, KC_EQL,  _______, _______,          A_RENAME, _______, KC_DOWN, _______, _______, _______, _______,
+           _______, KC_ASTR, KC_1,    KC_2,    KC_3,    KC_PLUS, _______,          _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______,
         //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                          _______, ADJUST, _______,                   A_EXTRACT, _______, A_RUN
+                                          KC_0,    KC_DOT,  KC_ENT,                    _______, NUMPAD,  FUNPAD
         //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
         ),
 
-    [_LOWER] = LAYOUT(
+    [_FUNPAD] = LAYOUT(
         //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-           _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
+           KC_F,    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
         //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
+           _______, KC_PERC, KC_F7,   KC_F8,   KC_F9,   A_RENAME,                           _______, _______, _______, _______, _______, KC_F12,
         //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, KC_LCBR, KC_RCBR, KC_UNDS, KC_PLUS, _______,                            KC_LEFT, KC_UP,   KC_RGHT, _______, _______, _______,
+           _______, KC_SLSH, KC_F4,   KC_F5,   KC_F6,   A_EXTRACT,                          KC_LEFT, KC_UP,   KC_RGHT, _______, _______, _______,
         //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, KC_LBRC, KC_RBRC, KC_MINS, KC_EQL,  _______, _______,          _______, _______, KC_DOWN, _______, _______, _______, _______,
+           _______, KC_ASTR, KC_F1,   KC_F2,   KC_F3,   A_RUN,   _______,          _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______,
         //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                          _______, _______,  _______,                   _______, ADJUST, _______
+                                          _______, _______, _______,                   _______, _______, _______
         //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
         ),
 
     [_ADJUST] = LAYOUT(
         //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-           _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, RESET,
+           RGB_M_X, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, _______, RESET,
         //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, RESET,
+           RGB_M_B, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, _______, KC_LPRN, KC_RPRN,
         //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, RGB_VAD, RGB_SAD, RGB_HUD, KC_MINS, RGB_RMOD,                           KC_LEFT, KC_UP,   KC_RGHT, _______, _______, RGB_M_X,
+           RGB_M_K, RGB_VAD, RGB_SAD, RGB_HUD, KC_UNDS, KC_MINS,                            KC_LEFT, KC_UP,   KC_RGHT, _______, KC_LCBR, KC_RCBR,
         //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-           _______, RGB_VAI, RGB_SAI, RGB_HUI, KC_PLUS, RGB_MOD, _______,          KC_MPLY, _______, KC_DOWN, _______, RGB_M_B, RGB_M_K, RGB_M_P,
+           RGB_M_P, RGB_VAI, RGB_SAI, RGB_HUI, KC_EQL,  KC_PLUS, _______,          _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, KC_LBRC, KC_RBRC,
         //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                          _______, _______, _______,                   KC_MPRV, _______, KC_MNXT
+                                          _______, _______,  _______,                   RESET,  _______, _______
         //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
         )};
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case QWERTY:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
-            }
-            return false;
-            break;
-        case LOWER:
-            if (record->event.pressed) {
-                layer_on(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
-            } else {
-                layer_off(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
-            }
-            return false;
-            break;
-        case RAISE:
-            if (record->event.pressed) {
-                layer_on(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
-            } else {
-                layer_off(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
-            }
-            return false;
-            break;
-        case ADJUST:
-            if (record->event.pressed) {
-                layer_on(_ADJUST);
-            } else {
-                layer_off(_ADJUST);
-            }
-            return false;
-            break;
-    }
-    return true;
-}
 
 void encoder_update_user(uint8_t index, bool clockwise) {
     switch (biton32(layer_state)) {
         default:
             tap_code(clockwise ? KC_VOLU : KC_VOLD);
             break;
-        case _LOWER:
+        case _NUMPAD:
+        case _FUNPAD:
             tap_code(clockwise ? KC_PGUP : KC_PGDN);
             break;
-        case _RAISE:
+        case _ADJUST:
             tap_code(clockwise ? KC_BRMU : KC_BRMD);
             break;
     }
