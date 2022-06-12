@@ -55,15 +55,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, KC_ASTR,    KC_1,    KC_2,    KC_3, KC_PLUS,                      KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,  FUNPAD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                             KC_0,  KC_DOT,  KC_ENT,    KC_RALT, KC_BSPC,  NUMPAD
+                                             KC_0,  KC_DOT,  KC_ENT,    KC_RALT, KC_BSPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
   [_FUNPAD] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_ESC, KC_PERC,   KC_F7,   KC_F8,   KC_F9, A_RENAME,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       KC_ESC, KC_PERC,   KC_F7,   KC_F8,   KC_F9, A_RENAME,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB, KC_SLSH,   KC_F4,   KC_F5,   KC_F6, A_EXTRACT,                    KC_LEFT,   KC_UP, KC_RGHT, XXXXXXX, XXXXXXX, QK_BOOT,
+       KC_TAB, KC_SLSH,   KC_F4,   KC_F5,   KC_F6, A_EXTRACT,                    KC_LEFT,   KC_UP, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, KC_ASTR,   KC_F1,   KC_F2,   KC_F3,   A_RUN,                      KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -80,17 +80,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       ADJUST,  KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, KC_LBRC, KC_RBRC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                           ADJUST, XXXXXXX, KC_LCTL,   KC_RALT,  KC_BSPC, XXXXXXX
+                                          XXXXXXX, XXXXXXX, KC_LCTL,   KC_RALT,  KC_BSPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
   [_ADJUST] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT,   KC_UP, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, XXXXXXX, KC_LCTL,    KC_RALT, KC_BSPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
