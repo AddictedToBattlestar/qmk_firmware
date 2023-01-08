@@ -28,6 +28,7 @@
 #define FUNPAD MO(_FUNPAD)
 #define ADJUST MO(_ADJUST)
 
+#define A_SLEEP LCTL(LSFT(KC_KB_POWER))
 #define A_RENAME LSFT(KC_F6)
 #define A_EXTRACT LALT(LGUI(KC_M))
 #define A_RUN LALT(LGUI(KC_R))
@@ -61,13 +62,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FUNPAD] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_ESC, KC_PERC,   KC_F7,   KC_F8,   KC_F9, A_RENAME,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
+  KC_KB_POWER, KC_PERC,   KC_F7,   KC_F8,   KC_F9, A_RENAME,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_TAB, KC_SLSH,   KC_F4,   KC_F5,   KC_F6, A_EXTRACT,                    KC_LEFT,   KC_UP, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, KC_ASTR,   KC_F1,   KC_F2,   KC_F3,   A_RUN,                      KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_LSFT, KC_ASTR,   KC_F1,   KC_F2,   KC_F3, A_RUN,                        KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_F10,  KC_LGUI, KC_LCTL,   KC_RALT,  KC_BSPC, XXXXXXX
+                                          KC_F10,  KC_LGUI, A_SLEEP,   KC_RALT,  KC_BSPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
