@@ -32,6 +32,8 @@
 #define A_RENAME LSFT(KC_F6)
 #define A_EXTRACT LALT(LGUI(KC_M))
 #define A_RUN LALT(LGUI(KC_R))
+#define A_SCREENA LCTL(LSFT(LGUI(KC_3)))
+#define A_SCREEN LCTL(LSFT(LGUI(KC_4)))
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -75,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------------.                    ,-----------------------------------------------------.
      KC_KB_POWER, KC_F12,  KC_F7,   KC_F8,   KC_F9,   A_RENAME,                       XXXXXXX, KC_LEFT, KC_UP,   KC_RGHT, XXXXXXX, QK_BOOT,
   //|------------+--------+--------+--------+--------+----------|                    |--------+--------+--------+--------+--------+--------|
-     KC_TAB,      KC_F11,  KC_F4,   KC_F5,   KC_F6,   A_EXTRACT,                      XXXXXXX, KC_LEFT, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
+     A_SCREENA,   KC_F11,  KC_F4,   KC_F5,   KC_F6,   A_EXTRACT,                      XXXXXXX, KC_LEFT, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
   //|------------+--------+--------+--------+--------+----------|                    |--------+--------+--------+--------+--------+--------|
-     KC_LSFT,    KC_F10,   KC_F1,   KC_F2,   KC_F3,   A_RUN,                          XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
+     A_SCREEN,    KC_F10,   KC_F1,   KC_F2,   KC_F3,   A_RUN,                          XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
   //|------------+--------+--------+--------+--------+----------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                              XXXXXXX, XXXXXXX,   A_SLEEP,    XXXXXXX, KC_BSPC, XXXXXXX
                                           //`----------------------------'  `--------------------------'
