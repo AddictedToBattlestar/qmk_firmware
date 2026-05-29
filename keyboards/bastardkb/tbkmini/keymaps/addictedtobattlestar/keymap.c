@@ -34,6 +34,8 @@
 #define A_RUN LALT(LGUI(KC_R))
 #define A_SCREENA LCTL(LSFT(LGUI(KC_3)))
 #define A_SCREEN LCTL(LSFT(LGUI(KC_4)))
+#define F_SCREENA LSFT(LGUI(KC_3))
+#define F_SCREEN LSFT(LGUI(KC_4))
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -62,15 +64,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_NUMPAD] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     KC_ESC,  KC_PERC, KC_7,    KC_8,    KC_9,    KC_DLR,                       XXXXXXX, KC_LEFT, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_TAB,  KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS,                      XXXXXXX, KC_LEFT, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_LSFT, KC_ASTR, KC_1,    KC_2,    KC_3,    KC_PLUS,                      XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, FUNPAD,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         KC_0,    KC_DOT,  XXXXXXX,    XXXXXXX, KC_BSPC, XXXXXXX
-                                      //`--------------------------'  `--------------------------'
+  //,-------------------------------------------------------.                    ,-----------------------------------------------------.
+     KC_ESC,    KC_PERC, KC_7,    KC_8,    KC_9,    KC_DLR,                       XXXXXXX, KC_LEFT, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
+  //|----------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+     F_SCREENA, KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS,                      XXXXXXX, KC_LEFT, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
+  //|----------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+     F_SCREEN,  KC_ASTR, KC_1,    KC_2,    KC_3,    KC_PLUS,                      XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, FUNPAD,
+  //|----------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                           KC_0,    KC_DOT,  XXXXXXX,    XXXXXXX, KC_BSPC, XXXXXXX
+                                        //`--------------------------'  `--------------------------'
   ),
 
   [_FUNPAD] = LAYOUT_split_3x6_3(
